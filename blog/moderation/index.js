@@ -8,7 +8,6 @@ app.post('/events', async (req, res) => {
     const { type, data } = req.body;
 
     if(type === 'CommentCreated') {
-        THIS IS BROKEN --- FIX IT
         const status = data.content.includes('orange') ? 'rejected' : 'approved' ;
 
         await axios.post('http://localhost:4005/events', {
